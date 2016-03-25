@@ -48,19 +48,19 @@ $(document).ready(function() {
     var snow = $("input:radio[name=snow]:checked").val();
     var alone = $("input:radio[name=alone]:checked").val();
     var non_english = $("input:radio[name=non-english]:checked").val();
-    var legs = $("input:radio[name=legs]:checked").val();
+    var hiking = $("input:radio[name=hiking]:checked").val();
     var pirate = $("input:radio[name=pirate]:checked").val();
     var alcohol = $("#alcohol").val();
 
     //checks for valid email, continues to sum points for each destination
     if (validateEmail(email)) {
       //shows heading
-      $("#suggestionHeading").show();
+      $("#suggestionHeading").fadeIn(800);
       //inserts name into suggestion heading
       if(name) {
-        $("#suggestionHeading").prepend(name + ": ");
+        $("#nameHeading").remove();
+        $("#suggestionHeading").prepend("<span id='nameHeading'>" + name + ": " + "<span>");
       }
-
       //style of vacation
       switch (style) {
         case "adventure":
@@ -94,7 +94,7 @@ $(document).ready(function() {
           francePoints +=3;
           break;
         case "no":
-          //do something
+          //no point changes if no
           break;
       }
       //non_english
@@ -109,8 +109,8 @@ $(document).ready(function() {
           caribbeanPoints += 4;
           break;
       }
-      //legs
-      switch (legs) {
+      //hiking
+      switch (hiking) {
         case "yes":
           whistlerPoints += 2;
           caribbeanPoints += 2;
@@ -132,7 +132,7 @@ $(document).ready(function() {
           caribbeanPoints += 6;
           break;
         case "no":
-          whistlerPoints += 2;
+          whistlerPoints -= 2;
           break;
       }
       //alcohol
@@ -150,37 +150,39 @@ $(document).ready(function() {
           break;
         case "none":
           caribbeanPoints -= 1;
-          vietnamPoints -= 2;
+          vietnamPoints -= 2;   //must drown stomach bugs in alcohol to survive
           break;
       }
 
       //determine max points
       max = Math.max(whistlerPoints, caribbeanPoints, patagoniaPoints, francePoints, vietnamPoints);
-      //figures out which destination has max points
+      //figures out which destination has max points (if tie, will pick first in list)
       if (whistlerPoints === max) {
-        $("#whistler").show();
+        $("#whistler").fadeIn(800);
+        //secondMax is used to store points of second highest destination
         secondMax = Math.max(caribbeanPoints, patagoniaPoints, francePoints, vietnamPoints);
       }
       else if (caribbeanPoints === max) {
-        $("#caribbean").show();
+        $("#caribbean").fadeIn(800);
         secondMax = Math.max(whistlerPoints, patagoniaPoints, francePoints, vietnamPoints);
       }
       else if (patagoniaPoints === max) {
-        $("#patagonia").show();
+        $("#patagonia").fadeIn(800);
         secondMax = Math.max(whistlerPoints, caribbeanPoints, francePoints, vietnamPoints);
       }
       else if (francePoints === max) {
-        $("#france").show();
+        $("#france").fadeIn(800);
         secondMax = Math.max(whistlerPoints, caribbeanPoints, patagoniaPoints, vietnamPoints);
       }
       else if (vietnamPoints === max) {
-        $("#vietnam").show();
+        $("#vietnam").fadeIn(800);
         secondMax = Math.max(whistlerPoints, caribbeanPoints, patagoniaPoints, francePoints);
       }
       else {
         alert("Sorry, there was an error");
       }
-      $("#suggestionButton").show();
+      //shows button for second suggestion
+      $("#suggestionButton").fadeIn(800);
     }
     //if not a valid email address causes a pop-up error
     else {
@@ -188,37 +190,38 @@ $(document).ready(function() {
     }
   });
 
-  //if user clicks button for another suggestion (reverse order in case two options tied for points)
+  //if user clicks button for another suggestion (reverse order in case two options had tied for points)
   $("#suggestionButton").click(function() {
+    //hide suggestion button
     $("#suggestionButton").hide();
-    if (caribbeanPoints === secondMax) {
-      $("#caribbean").insertBefore($(this));  //inserts second destination before suggestion button, to move to bottom of list
-      $("#caribbean").addClass("secondStyleDestination");
-      $("#caribbean").show();
-    }
-    else if (patagoniaPoints === secondMax) {
-      $("#patagonia").insertBefore($(this));
-      $("#patagonia").addClass("secondStyleDestination");
-      $("#patagonia").show();
+    //displays second destination based on points
+    if (vietnamPoints === secondMax) {
+      $("#vietnam").insertBefore($(this));
+      $("#vietnam").addClass("secondStyleDestination");
+      $("#vietnam").fadeIn(800);
     }
     else if (francePoints === secondMax) {
       $("#france").insertBefore($(this));
       $("#france").addClass("secondStyleDestination");
-      $("#france").show();
+      $("#france").fadeIn(800);
     }
-    else if (vietnamPoints === secondMax) {
-      $("#vietnam").insertBefore($(this));
-      $("#vietnam").addClass("secondStyleDestination");
-      $("#vietnam").show();
+    else if (patagoniaPoints === secondMax) {
+      $("#patagonia").insertBefore($(this));
+      $("#patagonia").addClass("secondStyleDestination");
+      $("#patagonia").fadeIn(800);
+    }
+    else if (caribbeanPoints === secondMax) {
+      $("#caribbean").insertBefore($(this));  //inserts second destination before suggestion button, to move to bottom of list
+      $("#caribbean").addClass("secondStyleDestination");
+      $("#caribbean").fadeIn(800);
     }
     else if (whistlerPoints === secondMax) {
       $("#whistler").insertBefore($(this));
       $("#whistler").addClass("secondStyleDestination");
-      $("#whistler").show();
+      $("#whistler").fadeIn(800);
     }
     else {
       alert("Sorry, there was an error");
     }
   });
-
 });
