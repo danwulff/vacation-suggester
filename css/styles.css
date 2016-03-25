@@ -1,5 +1,14 @@
 body {
   font-family: sans-serif;
+  background-color: #f9fbf2;
+}
+
+.col-sm-4 {
+  background-color: #ffede1;
+}
+
+#suggestionHeading {
+  display: none;
 }
 
 .destinations {
@@ -11,5 +20,13 @@ body {
 }
 
 .destinations p {
-  margin: 10px;
+  padding: 10px;
+}
+
+.styleDestination {
+  background-color: #afcbff;
+}
+
+.secondStyleDestination {
+  background-color: #d7f9ff;
 }
