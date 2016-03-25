@@ -1,10 +1,13 @@
 body {
   font-family: sans-serif;
   background-color: #f9fbf2;
+  padding: 6px;
 }
 
-.col-sm-4 {
+.inputForm {
   background-color: #ffede1;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 #suggestionHeading {
@@ -16,17 +19,32 @@ body {
 }
 
 .destinations div {
-    display: none;
+  display: none;
+  margin-top: 10px;
 }
 
 .destinations p {
   padding: 10px;
 }
 
+.destinations h3 {
+  font-size: 36px;
+  margin: 0px;
+  padding: 10px;
+}
+
+.destinations h4 {
+  margin: 0px;
+  padding: 10px;
+  font-size: 30px;
+}
+
 .styleDestination {
   background-color: #afcbff;
+  border-radius: 10px;
 }
 
 .secondStyleDestination {
   background-color: #d7f9ff;
+  border-radius: 10px;
 }
