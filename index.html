@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Vacation Suggester!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class ="row">
+        <h1>Vacation Suggester!</h1>
+        <h2>Fill out the form below to find your next vacation destination!</h2>
+        <!--Col for Survey Questions-->
+        <div class ="col-sm-6">
+          <h3>Here be some fine questions:</h3>
+          <!--Form: Ask for name and email-->
+          <div class="form-group" id="name">
+            <label class="control-label" for="nameInput">Name</label>
+            <input type="text" class="form-control" id="nameInput">
+          </div>
+          <div class="form-group" id="email">
+            <label class="control-label" for="emailInput">Email</label>
+            <input type="text" class="form-control" id="emailInput">
+          </div>
+          <!--Dropdown: Aventure, history or relaxation?-->
+          <p>What style of vacation do you want?</p>
+          <select class="form-control" id="style">
+            <option value="adventure">Adventure</option>
+            <option value="history">History</option>
+            <option value="relaxation">Relaxation</option>
+          </select><br>
+          <!--Radio Button: Do you enjoy snow?-->
+          <p>Do you enjoy snow?</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="snow" value="yes" checked>
+              Yes
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="snow" value="no">
+              No
+            </label>
+          </div>
+          <!--Radio Button: Will you be traveling alone?-->
+          <p>Will you be traveling alone?</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="alone" value="yes" checked>
+              Yes
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="alone" value="no">
+              No
+            </label>
+          </div>
+          <!--Radio Button: Are you comfortable traveling to a non-english speaking coountry-->
+          <p>Are you comfortable traveling in a non-english speaking country?</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="english" value="yes" checked>
+              Yes
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="english" value="no">
+              No
+            </label>
+          </div>
+          <!--Radio Button: Do you have legs that work?-->
+          <p>Do you have legs that work?</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="legs" value="yes" checked>
+              Yes
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="legs" value="no">
+              No
+            </label>
+          </div>
+          <!--Radio Button: Do you occasionally talk like a pirate?-->
+          <p>Do you occasionaly talk like a pirate?</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pirate" value="yes" checked>
+              Yes
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pirate" value="no">
+              No
+            </label>
+          </div>
+          <!--Dropdown: Beer, wine, cocktails or none-->
+          <p>What kind of alcohol do you enjoy?</p>
+          <select class="form-control" id="alcohol">
+            <option value="beer">Beer</option>
+            <option value="wine">Wine</option>
+            <option value="cocktails">Cocktails</option>
+            <option value="none">None</option>
+          </select><br>
+          <!--Submit button-->
+          <button type="button" class="btn btn-info" id="submit">Submit</button>
+
+        </div>
+        <!--End: Col for Survey Questions-->
+
+        <!--Col for Destination Suggestion-->
+        <div class="col-sm-6">
+          <!--Hidden stuff for suggestion, to be displayed later-->
+          <!--Button: Another suggestion, displays next reccomended vacation (format different?)-->
+        </div>
+        <!--End: Col for Destination Suggestion-->
+
+      </div>
+    </div>
+  </body>
+</html>
