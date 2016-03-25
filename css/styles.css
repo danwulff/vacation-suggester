@@ -3,8 +3,11 @@ body {
 }
 
 .destinations {
-  /*display: none;*/
   text-align: center;
+}
+
+.destinations div {
+    display: none;
 }
 
 .destinations p {
