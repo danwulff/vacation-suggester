@@ -56,12 +56,10 @@ $(document).ready(function() {
     if (validateEmail(email)) {
       //shows heading
       $("#suggestionHeading").show();
-
-      //inserts name into suggestion title
-      if(name)
-      {
+      //inserts name into suggestion heading
+      if(name) {
         $("#suggestionHeading").prepend(name + ": ");
-      } else{}
+      }
 
       //style of vacation
       switch (style) {
