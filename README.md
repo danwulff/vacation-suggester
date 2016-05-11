@@ -6,7 +6,7 @@
 
 ## Description
 
-_This is a example of javascript (jQuery) use. This is an html/css/javascript website that takes user input and displays a vacation destination depending on how questions were answered. The website can be seen at danwulff.github.com/io/vacation-suggester_
+_This is a example of javascript (jQuery) use. This is an html/css/javascript website that takes user input and displays a vacation destination depending on how questions were answered. The website can be seen at danwulff.github.io/vacation-suggester_
 
 ## Setup/Installation Requirements
 
